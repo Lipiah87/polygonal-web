@@ -22,7 +22,7 @@ export default function App() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const containerRef = useRef<HTMLDivElement | null>(null)
 
-  const [mode, setMode] = useState<"single" | "multi">("multi")
+  const [mode] = useState<"single" | "multi">("multi")
   const [points, setPoints] = useState<Point[]>([])
   const [multiCurves, setMultiCurves] = useState<Point[][]>([[]])
   const [currentCurveIndex, setCurrentCurveIndex] = useState(0)
@@ -167,10 +167,6 @@ export default function App() {
 
   function handlePointerUp() {
     setDraggingPointId(null)
-  }
-
-  function clearAll() {
-    setPoints([])
   }
 
   function deleteLastPoint() {
